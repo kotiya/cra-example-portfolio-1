@@ -1,0 +1,26 @@
+// Variables
+$font-family: "Raleway", serif;
+$font-url: "https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap";
+$gradient-start: rgb(27 20 41);
+$gradient-end: rgb(20 15 35);
+
+// Mixins
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Functions
+@function set-background($start, $end) {
+  @return linear-gradient(to left, $start, $end);
+}
+
+// Import
+@import url($font-url);
+
+body {
+  margin: 0;
+  font-family: $font-family !important;
+  @include font-smoothing;
+  background-image: set-background($gradient-start, $gradient-end);
+}
